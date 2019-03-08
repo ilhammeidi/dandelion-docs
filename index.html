@@ -105,7 +105,7 @@
                 </li>
             </ul>
 
-            <span class="copy">&copy; Copyright 2018 - Dandelion Pro</span>
+            <span class="copy">&copy; Copyright 2019 - Dandelion Pro</span>
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -119,14 +119,14 @@
                         <h1 class="title">Thank you for Purchasing </h1>
                         <br /><br />
                         <h3>Dandelion Pro - React Admin Dashboard Template</h3>
-                        <h4>Version 1.3</h4>
+                        <h4>Version 1.3.2</h4>
                         <hr />
                         <ul>
                             <li>
                                 Created : 18 Nov 2018
                             </li>
                             <li>
-                                Latest Update : 27 jan 2019
+                                Latest Update : 9 Mar 2019
                             </li>
                         </ul>
                     </div>
@@ -520,12 +520,12 @@ npm WARN html-to-draftjs@1.4.0 requires a peer of immutable@3.x.x || 4.x.x but n
                         <br />
                         <br />
                         <br />
-                        <h4>Template Hierarchy</h4>
+                        <h4>Template Architecture</h4>
                         <p>
-                          This is template hierarchy in diagram visuailzation. Click diagram or full screen button <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABXRSTlMA758vX1Pw3BoAAABJSURBVAjXY8AJQkODGBhUQ0MhbAUGBiYY24CBgRnGFmZgMISwgwwDGRhEhVVBbAVmEQYGRwMmBjIAQi/CTIRd6G5AuA3dzYQBAHj0EFdHkvV4AAAAAElFTkSuQmCC" alt="full screen" />
+                          This is template architecture in diagram visuailzation. Click diagram or full screen button <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABXRSTlMA758vX1Pw3BoAAABJSURBVAjXY8AJQkODGBhUQ0MhbAUGBiYY24CBgRnGFmZgMISwgwwDGRhEhVVBbAVmEQYGRwMmBjIAQi/CTIRd6G5AuA3dzYQBAHj0EFdHkvV4AAAAAElFTkSuQmCC" alt="full screen" />
                           to show in new tab with full screen
                       </p>
-                        <iframe frameborder="0" style="width:100%;height:540px;" src="architecture.html"></iframe>
+                        <iframe frameborder="0" style="width:100%;height:580px;" src="architecture.html"></iframe>
                     </div>
                 </section>
                 <!-- END -->
@@ -666,39 +666,48 @@ npm WARN html-to-draftjs@1.4.0 requires a peer of immutable@3.x.x || 4.x.x but n
                             </table>
                             <br />
                             <strong>Here's the complete code</strong>
-                                <pre><code class="language-js">const initialState = {
-/* Settings for Themes and layout */
-theme: 'pinkGreenTheme',
-type: 'light', // light or dark
-gradient: true, // true or false
-decoration: true, // true or false
-bgPosition: 'half', // half, header, full
-layout: 'left-sidebar', // left-sidebar, right-sidebar, top-navigation, mega-menu
-/* End settings */
-sidebarOpen: true,
-pageLoaded: false,
-palette: List([
-  { name: 'Fruit', value: 'greenOrangeTheme' },
-  { name: 'Purple', value: 'purpleRedTheme' },
-  { name: 'Ocean Sky', value: 'skyBlueTheme' },
-  { name: 'Rose Gold', value: 'magentaTheme' },
-  { name: 'Ultra Violet', value: 'purpleTheme' },
-  { name: 'Botani', value: 'pinkGreenTheme' },
-  { name: 'Ubuntu', value: 'orangeTheme' },
-  { name: 'Patriot', value: 'brownTheme' },
-  { name: 'Vintage', value: 'yellowCyanTheme' },
-  { name: 'Mint', value: 'blueCyanTheme' },
-  { name: 'Deep Ocean', value: 'blueTheme' },
-  { name: 'School', value: 'yellowBlueTheme' },
-  { name: 'Leaf', value: 'cyanTheme' },
-  { name: 'Metal Red', value: 'redTheme' },
-  { name: 'Grey', value: 'greyTheme' },
-]),
-subMenuOpen: []
+                                <pre><code class="language-js">// file: app/redux/modules/ui.js
+
+const initialState = {
+  /* Settings for Themes and layout */
+  theme: 'pinkGreenTheme',
+  type: 'light', // light or dark
+  gradient: true, // true or false
+  decoration: true, // true or false
+  bgPosition: 'half', // half, header, full
+  layout: 'left-sidebar', // left-sidebar, right-sidebar, top-navigation, mega-menu
+  /* End settings */
+  sidebarOpen: true,
+  pageLoaded: false,
+  palette: List([
+    { name: 'Fruit', value: 'greenOrangeTheme' },
+    { name: 'Purple', value: 'purpleRedTheme' },
+    { name: 'Ocean Sky', value: 'skyBlueTheme' },
+    { name: 'Rose Gold', value: 'magentaTheme' },
+    { name: 'Ultra Violet', value: 'purpleTheme' },
+    { name: 'Botani', value: 'pinkGreenTheme' },
+    { name: 'Ubuntu', value: 'orangeTheme' },
+    { name: 'Patriot', value: 'brownTheme' },
+    { name: 'Vintage', value: 'yellowCyanTheme' },
+    { name: 'Mint', value: 'blueCyanTheme' },
+    { name: 'Deep Ocean', value: 'blueTheme' },
+    { name: 'School', value: 'yellowBlueTheme' },
+    { name: 'Leaf', value: 'cyanTheme' },
+    { name: 'Metal Red', value: 'redTheme' },
+    { name: 'Grey', value: 'greyTheme' },
+  ]),
+  subMenuOpen: []
 };
 </code></pre>
                           </li>
                         </ul>
+                      <br /><br />
+                      <h4>UI Redux Architecture</h4>
+                        <p>
+                          This is UI architecture in diagram visuailzation. Click diagram or full screen button <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABXRSTlMA758vX1Pw3BoAAABJSURBVAjXY8AJQkODGBhUQ0MhbAUGBiYY24CBgRnGFmZgMISwgwwDGRhEhVVBbAVmEQYGRwMmBjIAQi/CTIRd6G5AuA3dzYQBAHj0EFdHkvV4AAAAAElFTkSuQmCC" alt="full screen" />
+                          to show in new tab with full screen
+                      </p>
+                        <iframe frameborder="0" style="width:100%;height:360px;" src="ui_architecture.html"></iframe>
                     </div>
                 </section>
                 <!-- END -->
@@ -714,7 +723,9 @@ subMenuOpen: []
                         <br /><br />
                         <ul>
                           <li>Open config file <code>app/config/codePreview.js</code></li>
-                          <li>By default it set by false <pre><code class="language-js">export default {
+                          <li>By default it set by false <pre><code class="language-js">// file: app/config/codePreview.js
+
+export default {
   enable: false
 };
 </code></pre></li>
@@ -756,7 +767,9 @@ subMenuOpen: []
                             <li>Create new js file inside that folder <b>MyPage</b>, ex <code>SamplePage.js</code>. <em>The name must in capitalize</em></li>
                             <li>
                               Inside the file create a simple page HTML ex: <br />
-                              <pre><code class="language-js">import React from 'react';
+                              <pre><code class="language-js">// file: app/containers/MyPage/SamplePage.js
+
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { PapperBlock } from 'dan-components';
 
@@ -788,14 +801,18 @@ export default SamplePage;
                             </li>
                           <li>
                             Import it asynchronously to the routing. Open file <code>app/containers/pageListAsync.js</code>
-                                <pre><code class="language-js">export const SamplePage = Loadable({
+                                <pre><code class="language-js">// app/containers/pageListAsync.js
+
+export const SamplePage = Loadable({
   loader: () => import('./MyPage/SamplePage'),
   loading: Loading,
 });</code></pre>
                               </li>
                               <li>
                                 Load it inside the template. In this example we'll use in dashboard template. Open file <code>app/containers/App/Application.js</code>
-                                <pre><code class="language-js">import { SamplePage } from '../pageListAsync';
+                                <pre><code class="language-js">// file: app/containers/App/Application.js
+
+import { SamplePage } from '../pageListAsync';
 class Application extends React.Component {
   render() {
     const { changeMode } = this.props;
@@ -809,12 +826,19 @@ class Application extends React.Component {
   }
 }</code></pre>
                               </li>
-                              <li>Then you can access it at <a href="http://localhost:3000/mypage/samplepage">http://localhost:3000/mypage/samplepage</a></li>
+                              <li>Then you can access it at <a href="http://localhost:3000/mypage/sample-page">http://localhost:3000/mypage/sample-page</a></li>
                               <li>Also you can put the a usual link inside &lt;a /&gt; or material button. <a href="http://localhost:3000/app/forms/buttons" target="_blank">See this documentation</a></li>
                             </ul>
                         <br />
                         <br />
                     </div>
+                  <br /><br />
+                  <h4>Routing Architecture</h4>
+                        <p>
+                          This is Routing architecture in diagram visuailzation. Click diagram or full screen button <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABXRSTlMA758vX1Pw3BoAAABJSURBVAjXY8AJQkODGBhUQ0MhbAUGBiYY24CBgRnGFmZgMISwgwwDGRhEhVVBbAVmEQYGRwMmBjIAQi/CTIRd6G5AuA3dzYQBAHj0EFdHkvV4AAAAAElFTkSuQmCC" alt="full screen" />
+                          to show in new tab with full screen
+                      </p>
+                        <iframe frameborder="0" style="width:100%;height:560px;" src="routing_architecture.html"></iframe>
                 </section>
                 <!-- END -->
               
@@ -829,7 +853,9 @@ class Application extends React.Component {
                           <li>Create new js file inside that folder <b>MyComponent</b>, ex <code>SampleComponent.js</code>. <em>The name must in capitalize</em></li>
                           <li>
                               Inside the file create a simple ES6 Class ex: <br />
-                              <pre><code class="language-js">import React from 'react';
+                              <pre><code class="language-js">// file: app/components/MyComponent/SampleComponent.js
+
+import React from 'react';
 
 class SampleComponent extends React.Component {
   render() {
@@ -846,9 +872,13 @@ export default SampleComponent;
                             <li>Register it to index. Open file <code>app/components/index.js</code></li>
                             <li>
                               Import that component<br />
-                              <pre><code class="language-js">import SampleComponent from './MyComponent/SampleComponent';</code></pre>
+                              <pre><code class="language-js">
+// file: app/components/index.js
+
+import SampleComponent from './MyComponent/SampleComponent';
+                              </code></pre>
                             </li>
-                            <li>Open a <b>target page</b> where you want use it. Ex: Open <code>src/app/MyPage/SamplePage</code>. <em>(Example page that we've made before)</em></li>
+                            <li>Open a <b>target page</b> where you want use it. Ex: Open <code>src/app/MyPage/SamplePage</code>. <em>(Example page that we've made in previous section)</em></li>
                             <li>
                               Import component form component library<br />
                               <pre><code class="language-js">import { SampleComponent } from 'dan-components;</code></pre>
@@ -862,7 +892,41 @@ export default SampleComponent;
 }
                             </code></pre>
                                 </li>
-                                <li>Then you can check the result at <a href="http://localhost:3000/mypage/samplepage">http://localhost:3000/mypage/samplepage</a></li>
+                                <li>
+                                  Here's complete code <br />
+                                  <pre><code class="language-js">// file: app/containers/MyPage/SamplePage.js
+
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { PapperBlock, SampleComponent } from 'dan-components';
+
+class SamplePage extends React.Component {
+  render() {
+    const title = 'Dandelion Pro. Blank Page';
+    const description = 'Dandelion Pro';
+    return (
+      &lt;div&gt;
+        &lt;Helmet&gt;
+          &lt;title&gt;{title}&lt;/title&gt;
+          &lt;meta name="description" content={description} /&gt;
+          &lt;meta property="og:title" content={title} /&gt;
+          &lt;meta property="og:description" content={description} /&gt;
+          &lt;meta property="twitter:title" content={title} /&gt;
+          &lt;meta property="twitter:description" content={description} /&gt;
+        &lt;/Helmet&gt;
+        &lt;PapperBlock title="Blank Page" desc="Some text description"&gt;
+          &lt;SampleComponent /&gt;
+        &lt;/PapperBlock&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default SamplePage;
+
+</code></pre>
+                                </li>
+                                <li>Then you can check the result at <a href="http://localhost:3000/mypage/sample-page">http://localhost:3000/mypage/sample-page</a></li>
                         </ul>
                     </div>
                 </section>
@@ -1318,6 +1382,78 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                     <div class="col-lg-10">
                         <h1>Change Log</h1>
                         <hr />
+                      <table class="table table-striped log">
+                            <thead>
+                              <tr>
+                                <th>
+                                    <strong>Version 1.3.2 – 9 Mar, 2019</strong>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <td>
+                                      Feature: Optimized scrolling page speed. Now smoother and faster
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                      Feature: Improved search result for ui components and pages
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                      Fixed: Ui issues for calculator widget, clock widget and contact
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                      Fixed: Wrong way route for pages has reducer state in production build
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                      UI Improvement: Change alignment text to left for avatar on collpased menu
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                      Docs: Add starting point for template diagram flow
+                                  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-striped log">
+                            <thead>
+                              <tr>
+                                <th>
+                                    <strong>Version 1.3.1 – 4 Feb, 2019</strong>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <td>
+                                      UI Improvement: Landing Page, Calendar App, and Settings
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                      Fixed: Textfield icon alignment
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                      Fixed: Search input on focus UI issue
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                      Fixed: Sidebar menu spacing in Creative Landing Page
+                                  </td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <table class="table table-striped log">
                             <thead>
                               <tr>
