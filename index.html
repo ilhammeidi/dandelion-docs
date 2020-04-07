@@ -105,7 +105,7 @@
                 </li>
             </ul>
 
-            <span class="copy">&copy; Copyright 2019 - Dandelion Pro</span>
+            <span class="copy">&copy; Copyright 2020 - Dandelion Pro</span>
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -119,14 +119,14 @@
                         <h1 class="title">Thank you for Purchasing </h1>
                         <br /><br />
                         <h3>Dandelion Pro - React Admin Dashboard Template</h3>
-                        <h4>Version 1.6.0</h4>
+                        <h4>Version 1.6.2</h4>
                         <hr />
                         <ul>
                             <li>
                                 Created : 18 Nov 2018
                             </li>
                             <li>
-                                Latest Update : 30 Nov 2019
+                                Latest Update : 7 Apr 2020
                             </li>
                         </ul>
                     </div>
@@ -1383,46 +1383,151 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                         <h1>Change Log</h1>
                         <hr />
                       <table class="table table-striped log">
-                            <thead>
+                          <thead>
+                            <tr>
+                              <th>
+                                  <strong>Version 1.6.2 – 7 Apr, 2020</strong>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
                               <tr>
-                                <th>
-                                    <strong>Version 1.6 – 30 Nov, 2019</strong>
-                                </th>
+                                <td>
+                                    Fixed: Collapsible sidebar in Safari
+                                </td>
                               </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                  <td>
-                                      Chore: Update Material UI and more packages
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                      Fixed: Upload Preview
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                      Fixed: Add new data if data table is empty
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                      Fixed: Open header menu issue
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                      Fixed: Redux form typing experience
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                      Fixed: Datepicker localizations
-                                  </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                              <tr>
+                                <td>
+                                    File changes: <br />
+                                    - app/components/Sidebar/index.js <br />
+                                    - app/components/Sidebar/sidebar-jss.js <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Fixed: Cannot clear redux form textfiled
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    File changes: <br />
+                                    - app/components/Forms/ReduxFormMUI.js <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Fixed: Missing image in gallery page
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    File changes: <br />
+                                    - app/components/Gallery/photo-jss.js <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Fixed: Not aligned CRUD Table icons
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    File changes: <br />
+                                    - app/components/Tables/tableParts/DatePickerCell.js <br />
+                                    - app/components/Tables/tableParts/TimePickerCell.js
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Fixed: Top navigation menu issue
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    File changes: <br />
+                                    - app/containers/Templates/Dashboard.js <br />
+                                    - app/components/Header/DropListMenu.js <br />
+                                    - app/components/Header/MegaMenu.js
+                                </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      <table class="table table-striped log">
+                          <thead>
+                            <tr>
+                              <th>
+                                  <strong>Version 1.6.1 – 22 Dec, 2019</strong>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                <td>
+                                    Fixed: Material UI Table responsive
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    File changes: <br />
+                                    - app/styles/theme/applicationTheme.js <br />
+                                    - app/containers/Tables/demos/AdvFilter.js <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Fixed: Textfield adornment layout
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    File changes: <br />
+                                    - app/styles/theme/applicationTheme.js <br />
+                                    - app/containers/Forms/demos/TextFieldsLayout.js <br />
+                                </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      <table class="table table-striped log">
+                          <thead>
+                            <tr>
+                              <th>
+                                  <strong>Version 1.6 – 30 Nov, 2019</strong>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                <td>
+                                    Chore: Update Material UI and more packages
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Fixed: Upload Preview
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Fixed: Add new data if data table is empty
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Fixed: Open header menu issue
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Fixed: Redux form typing experience
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Fixed: Datepicker localizations
+                                </td>
+                              </tr>
+                          </tbody>
+                      </table>
                       <table class="table table-striped log">
                             <thead>
                               <tr>
