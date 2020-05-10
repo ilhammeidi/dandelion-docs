@@ -70,6 +70,9 @@
                     <a href="#code_basic">Basic Code Structure</a>
                 </li>
                 <li>
+                    <a href="#code_architecture">Template Architecture</a>
+                </li>
+                <li>
                     <a href="#starter">Starter Project <span class="badge badge-danger">HOT</span></a>
                 </li>
                 <li>
@@ -119,14 +122,14 @@
                         <h1 class="title">Thank you for Purchasing </h1>
                         <br /><br />
                         <h3>Dandelion Pro - React Admin Dashboard Template</h3>
-                        <h4>Version 1.6.2</h4>
+                        <h4>Version 1.7.0</h4>
                         <hr />
                         <ul>
                             <li>
                                 Created : 18 Nov 2018
                             </li>
                             <li>
-                                Latest Update : 7 Apr 2020
+                                Latest Update : 10 May 2020
                             </li>
                         </ul>
                     </div>
@@ -518,17 +521,42 @@ npm WARN html-to-draftjs@1.4.0 requires a peer of immutable@3.x.x || 4.x.x but n
                           </tbody>
                         </table>
                         <br />
-                        <br />
-                        <br />
-                        <h4>Template Architecture</h4>
-                        <p>
-                          This is template architecture in diagram visuailzation. Click diagram or full screen button <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABXRSTlMA758vX1Pw3BoAAABJSURBVAjXY8AJQkODGBhUQ0MhbAUGBiYY24CBgRnGFmZgMISwgwwDGRhEhVVBbAVmEQYGRwMmBjIAQi/CTIRd6G5AuA3dzYQBAHj0EFdHkvV4AAAAAElFTkSuQmCC" alt="full screen" />
-                          to show in new tab with full screen
-                      </p>
-                        <iframe frameborder="0" style="width:100%;height:580px;" src="architecture.html"></iframe>
                     </div>
                 </section>
                 <!-- END -->
+              
+              <!-- TEMPLATE ARCHITECTURE -->
+              <section class="row" id="code_architecture">
+                  <div class="col-lg-12">
+                    <h1>Template Architecture</h1>
+                    <hr />
+                    <p>
+                        This is template architecture in diagram visualization. Click diagram or full screen button <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABXRSTlMA758vX1Pw3BoAAABJSURBVAjXY8AJQkODGBhUQ0MhbAUGBiYY24CBgRnGFmZgMISwgwwDGRhEhVVBbAVmEQYGRwMmBjIAQi/CTIRd6G5AuA3dzYQBAHj0EFdHkvV4AAAAAElFTkSuQmCC" alt="full screen" />
+                        to show in new tab with full screen
+                    </p>
+                    <br />
+                    <h4>Components &amp; Containers</h4>
+                    <p>This diagram bellow explain whole project structure. </p>
+                    <br />
+                    <iframe frameborder="0" style="width:100%;height:580px;" src="partial/hoc_architecture.html"></iframe>
+                    <br />
+                    <h4>Routing</h4>
+                    <p>This diagram explain routing structure from api menu to page routing and every available layout(containers) to components.</p>
+                    <br />
+                    <iframe frameborder="0" style="width:100%;height:580px;" src="partial/routing_architecture.html"></iframe>
+                    <br />
+                    <h4>Redux</h4>
+                    <p>Explain CRUD data structure from dummy api read by components then created and manipulated by reducers.</p>
+                    <br />
+                    <iframe frameborder="0" style="width:100%;height:580px;" src="partial/redux_architecture.html"></iframe>
+                    <br />
+                    <h4>Design &amp; Themes</h4>
+                    <p>The redux structure about manipulating state that related ui changes.</p>
+                    <br />
+                    <iframe frameborder="0" style="width:100%;height:580px;" src="partial/ui_architecture.html"></iframe>
+                  </div>
+              </section>
+              <!-- END -->
               
               <!-- STARTER PROJECT -->
                 <section class="row" id="starter">
@@ -707,7 +735,7 @@ const initialState = {
                           This is UI architecture in diagram visuailzation. Click diagram or full screen button <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABXRSTlMA758vX1Pw3BoAAABJSURBVAjXY8AJQkODGBhUQ0MhbAUGBiYY24CBgRnGFmZgMISwgwwDGRhEhVVBbAVmEQYGRwMmBjIAQi/CTIRd6G5AuA3dzYQBAHj0EFdHkvV4AAAAAElFTkSuQmCC" alt="full screen" />
                           to show in new tab with full screen
                       </p>
-                        <iframe frameborder="0" style="width:100%;height:360px;" src="ui_architecture.html"></iframe>
+                        <iframe frameborder="0" style="width:100%;height:360px;" src="partial/ui_architecture.html"></iframe>
                     </div>
                 </section>
                 <!-- END -->
@@ -838,7 +866,7 @@ class Application extends React.Component {
                           This is Routing architecture in diagram visuailzation. Click diagram or full screen button <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABXRSTlMA758vX1Pw3BoAAABJSURBVAjXY8AJQkODGBhUQ0MhbAUGBiYY24CBgRnGFmZgMISwgwwDGRhEhVVBbAVmEQYGRwMmBjIAQi/CTIRd6G5AuA3dzYQBAHj0EFdHkvV4AAAAAElFTkSuQmCC" alt="full screen" />
                           to show in new tab with full screen
                       </p>
-                        <iframe frameborder="0" style="width:100%;height:560px;" src="routing_architecture.html"></iframe>
+                        <iframe frameborder="0" style="width:100%;height:560px;" src="partial/routing_architecture.html"></iframe>
                 </section>
                 <!-- END -->
               
@@ -1382,6 +1410,90 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                     <div class="col-lg-10">
                         <h1>Change Log</h1>
                         <hr />
+                      <table class="table table-striped log">
+                          <thead>
+                            <tr>
+                              <th>
+                                  <strong>Version 1.7.0 – 10 May, 2020</strong>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                <td>
+                                    New Sidebar Feature: <br />
+                                    <ul>
+                                      <li>One level menu navigation</li>
+                                      <li>Dramatic transparent blur background</li>
+                                    </ul>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  File changes: <br />
+                                  - app/components/Sidebar/*.js <br />
+                                  - app/components/SidebarBig/*.js <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Changed page loader to @material-ui/core/LinearProgress <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    File changes: <br />
+                                    - /app/containers/App/ThemeWrapper.js
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Fixed: MUI Datatables pagination in mobile screen
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                   File changes: /app/styles/theme/applicationTheme.js
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Performance Enhancement: <br />
+                                    <ul>
+                                      <li>Reduced build file size</li>
+                                      <li>Fixed twice render in page transition</li>
+                                    </ul>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    File changes: <br />
+                                    - app/containers/Forms/demos/RatingCustom.js<br />
+                                    - app/containers/Templates/layouts/*.js
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Refactor redux structure
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    <p>
+                                      Move sample applications <strong>actions, constants, reducers, dummy-data, and containers</strong> to <code>app/containers/SampleApps/[AppsName]</code>
+                                    </p>
+                                    <p>To make access from view to reducers and actions easier</p>
+                                    File changes: <br />
+                                    - /internals/webpack/webpack.base.babel.js<br />
+                                    - (removed) app/actions/ <br />
+                                    - (added) app/containers/SampleApps/[AppsName] <br />
+                                    - (moved) global action to app/redux/actions and app/redux/constant <br />
+                                    - /app/redux/modules/*.js <br />
+                                    - /app/redux/reducers.js
+                                </td>
+                              </tr>
+                          </tbody>
+                      </table>
                       <table class="table table-striped log">
                           <thead>
                             <tr>
