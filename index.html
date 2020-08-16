@@ -122,14 +122,14 @@
                         <h1 class="title">Thank you for Purchasing </h1>
                         <br /><br />
                         <h3>Dandelion Pro - React Admin Dashboard Template</h3>
-                        <h4>Version 1.7.1</h4>
+                        <h4>Version 1.8.0</h4>
                         <hr />
                         <ul>
                             <li>
                                 Created : 18 Nov 2018
                             </li>
                             <li>
-                                Latest Update : 26 Jul 2020
+                                Latest Update : 16 Aug 2020
                             </li>
                         </ul>
                     </div>
@@ -431,6 +431,34 @@ npm WARN html-to-draftjs@1.4.0 requires a peer of immutable@3.x.x || 4.x.x but n
 </code></pre>
                               <strong>Don't worry the app will run as well</strong>
                               <p>For warning some of dependencies need another dependencies too, maybe once you install them, there’s some changes from the 3rd party vendor so probably it will make a warning to another dependencies.</p>
+                            </li>
+                            <li>
+                              <strong>Stuck on installation related node-pre-gyp. How to fix it?</strong><br />
+                              Here’s a case error when installation being stuck on node-pre-gyp
+
+node-pre-gyp WARN Using request for node-pre-gyp https download 
+Please stop the installation process by press CTRL+C Then run npm install again.
+                            </li>
+                            <li>
+                              <strong>Error SCSS or node-sass when NPM start. How to fix it?</strong>
+                              <pre>
+<code class="language-js">ERROR in ./app/styles/layout/base.scss (./node_modules/css-loader/dist/cjs.js??ref--8-1!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/lib/loader.js??ref--8-3!./app/styles/layout/base.scss)
+Module build failed (from ./node_modules/sass-loader/lib/loader.js):</code>
+                              </pre>
+                              - It mean the node-sass not installed succesfully. May because connection problem, changed node environment during installation, or blocked node-sass repository<br />
+- Please install node-sass manually by npm install node-sass --save<br />
+- Build dll libraries npm run build:dll<br />
+- Try to start project again npm start<br />
+                            </li>
+                            <li>
+                              <strong>Error warning at the first time npm install Module not found: Error: and ERROR in dll reactBoilerplateDeps. What that’s mean?</strong><br />
+                              Don’t worry for the errors when npm install or npm build:dll it’s warning messages because the webpack dll cannot go through inside those dependencies directory, some dependencies work for backend side (such as fs and moment module ) so that will not built in dll libraries.
+
+You can continue to start the project by run npm start or npm run start:prod (if production) and should work properly.
+
+If the program cannot running properly, please try to remove all module in node_modules/. Then install again with npm install.
+<br /><br />
+                              <em>FYI: The webpack dll itself use for optimizing building script. Here’s article about webpack dll https://medium.com/@emilycoco/how-to-use-the-dll-plugin-to-speed-up-your-webpack-build-dbf330d3b13c.</em>
                             </li>
                             <li>
                               <em>if got an error with a dependencies installation</em>. Try to remove the problematic package in
@@ -1409,6 +1437,61 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                 <section class="row" id="log">
                     <div class="col-lg-10">
                         <h1>Change Log</h1>
+                      <table class="table table-striped log">
+                          <thead>
+                            <tr>
+                              <th>
+                                  <strong>Version 1.8.0 – 16 Aug, 2020</strong>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                <td>
+                                    UI changes: Adjust textfield UI
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  File changes: <br />
+                                  - app/styles/theme/applicationTheme.js <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Chore: Implement react hooks lifecycle
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  File changes: <br />
+                                  - app/components/Header/header-jss.js <br />
+                                  - app/containers/App/*.js <br />
+                                  - app/containers/Templates/*.js<br />
+                                  - app/containers/Templates/layouts/*.js<br />
+                                  - app/components/GuideSlider/index.js <br />
+                                  - app/components/Header/*.js <br />
+                                  - app/components/Notification/Notification.js <br />
+                                  - app/components/Notification/Notification.js <br />
+                                  - app/components/Search/*.js <br />
+                                  - app/components/Sidebar/*.js <br />
+                                  - app/components/SidebarBig/*.js <br />
+                                  - app/components/SourceReader/SourceReader.js <br />
+                                  - app/components/TemplateSettings/index.js <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Docs: Update documentation
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  Add intallation troubleshooting case.
+                                </td>
+                              </tr>
+                          </tbody>
+                      </table>
                       <table class="table table-striped log">
                           <thead>
                             <tr>
