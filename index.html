@@ -122,14 +122,14 @@
                         <h1 class="title">Thank you for Purchasing </h1>
                         <br /><br />
                         <h3>Dandelion Pro - React Admin Dashboard Template</h3>
-                        <h4>Version 1.9.1</h4>
+                        <h4>Version 1.9.2</h4>
                         <hr />
                         <ul>
                             <li>
                                 Created : 18 Nov 2018
                             </li>
                             <li>
-                                Latest Update : 25 Oct 2020
+                                Latest Update : 13 Dec 2020
                             </li>
                         </ul>
                     </div>
@@ -360,8 +360,11 @@
                         <hr />
                         <h4>Production</h4>
 						<ul>
+              <li>First you have to clone/copy the all project code in your hosting/cloud server.</li>
+              <li>Open your console to access the hosting/cloud server.</li>
+              <li>If you haven't install the dependencies before, please run npm install</li>
 							<li>
-                                First you need to build the production assets first
+                              After that you need to build the production assets first
 								<pre><code class="language-js">npm run build</code></pre>
 								It usually take longer time than development to generate and compress production code.
 								The generated files will be placed in <code>build/</code>
@@ -757,6 +760,32 @@ const initialState = {
 </code></pre>
                           </li>
                         </ul>
+                      <br /><br />
+                      <h4>Theme Palette Color</h4>
+                      <p>This theme has two theme mode, dark and light. To change default color you can find in</p>
+                      <ul>
+                        <li>Light mode: <code>app/api/palette/lightPalette.js</code></li>
+                        <li>Dark mode: <code>app/api/palette/darkPalette.js</code></li>
+                      </ul>
+                      <p>Every kind of themes has two palette, there are primary and secondary within light, main, dark and contrastText. Just change the value as you like. In example if you want to change <code>purpleRedTheme</code> in dark mode</p>
+                      <pre><code class="language-js">// app/api/palette/darkPalette.js
+purpleRedTheme: {
+  palette: {
+    primary: {
+      light: '#EDE7F6',
+      main: '#673AB7',
+      dark: '#512DA8',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#FCE4EC',
+      main: '#EC407A',
+      dark: '#C2185B',
+      contrastText: '#fff',
+    },
+  },
+},
+</code></pre>
                       <br /><br />
                       <h4>UI Redux Architecture</h4>
                         <p>
@@ -1436,7 +1465,70 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                 <!-- Log -->
                 <section class="row" id="log">
                     <div class="col-lg-10">
-                        <h1>Change Log</h1>
+                      <h1>Change Log</h1>
+                      <table class="table table-striped log">
+                          <thead>
+                            <tr>
+                              <th>
+                                  <strong>Version 1.9.2 – 13 Dec, 2020</strong>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                <td>
+                                  Fixed: Mobile issue Form Panel 
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  File changes: <br />
+                                  app/components/Panel/panel-jss.js
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Chore: Implement react hooks lifecycle for Maps
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  File changes: <br />
+                                  - app/containers/Maps/*.js <br />
+                                  - app/containers/Maps/demos/*.js <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Chore: Implement react hooks lifecycle for Forms demo
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  File changes: <br />
+                                  - app/containers/Forms/*.js <br />
+                                  - app/containers/Forms/demos/*.js <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Chore: Implement react hooks lifecycle for Widgets demo
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  File changes: <br />
+                                  - app/containers/Widgets/*.js <br />
+                                  - app/containers/Widgets/demos/*.js <br />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                    Docs: Update color theme change and deployment
+                                </td>
+                              </tr>
+                          </tbody>
+                      </table>
                       <table class="table table-striped log">
                           <thead>
                             <tr>
