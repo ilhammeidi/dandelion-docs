@@ -128,14 +128,14 @@
                         <h1 class="title">Thank you for Purchasing </h1>
                         <br /><br />
                         <h3>Dandelion Pro - React Admin Dashboard Template</h3>
-                        <h4>Version 2.4.1</h4>
+                        <h4>Version 2.4.2</h4>
                         <hr />
                         <ul>
                             <li>
                                 Created : 18 Nov 2018
                             </li>
                             <li>
-                                Latest Update : 24 Sept 2022
+                                Latest Update : 7 Nov 2022
                             </li>
                         </ul>
                     </div>
@@ -482,65 +482,218 @@
                 <section class="row" id="shoot">
                     <div class="col-lg-10">
                         <h1>Troublehooting</h1>
-                        <hr />
-                        <h4>Installation Problem</h4>
-                        <ul>
-                          <li>
-                              <em>if got warning like this :</em><br />
-                              <pre><code class="language-js">npm WARN redux-immutablejs@0.0.8 requires a peer of immutable@^3.7.5 but none is installed. You must install peer dependencies yourself.
-npm WARN react-draft-wysiwyg@1.12.13 requires a peer of immutable@3.x.x || 4.x.x but none is installed. You must install peer dependencies yourself.
-npm WARN slick-carousel@1.8.1 requires a peer of jquery@>=1.8.0 but none is installed. You must install peer dependencies yourself.
-npm WARN draftjs-utils@0.9.4 requires a peer of immutable@3.x.x || 4.x.x but none is installed. You must install peer dependencies yourself.
-npm WARN html-to-draftjs@1.4.0 requires a peer of immutable@3.x.x || 4.x.x but none is installed. You must install peer dependencies yourself.
-</code></pre>
-                              <strong>Don't worry the app will run as well</strong>
-                              <p>For warning some of dependencies need another dependencies too, maybe once you install them, there’s some changes from the 3rd party vendor so probably it will make a warning to another dependencies.</p>
-                            </li>
-                            <li>
-                              <strong>Stuck on installation related node-pre-gyp. How to fix it?</strong><br />
-                              Here’s a case error when installation being stuck on node-pre-gyp
+                        <hr>
+                        <p>Here's most common error problem when installation and first setup project</p>
+                        <div class="accordion" id="accordionExample">
+                          <div class="card">
+                            <div class="card-header" id="headingDeprecated">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseDeprecated" aria-expanded="true" aria-controls="collapseOne">
+                                  Installation Problem: Dependencies Error Deprecation
+                                </button>
+                              </h5>
+                            </div>
 
-node-pre-gyp WARN Using request for node-pre-gyp https download 
-Please stop the installation process by press CTRL+C Then run npm install again.
-                            </li>
-                            <li>
-                              <strong>Error SCSS or node-sass when NPM start. How to fix it?</strong>
-                              <pre>
-<code class="language-js">ERROR in ./app/styles/layout/base.scss (./node_modules/css-loader/dist/cjs.js??ref--8-1!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/lib/loader.js??ref--8-3!./app/styles/layout/base.scss)
-Module build failed (from ./node_modules/sass-loader/lib/loader.js):</code>
-                              </pre>
-                              - It mean the node-sass not installed succesfully. May because connection problem, changed node environment during installation, or blocked node-sass repository<br />
-- Please install node-sass manually by npm install node-sass --save<br />
-- Build dll libraries npm run build:dll<br />
-- Try to start project again npm start<br />
-                            </li>
-                            <li>
-                              <strong>Error warning at the first time npm install Module not found: Error: and ERROR in dll reactBoilerplateDeps. What that’s mean?</strong><br />
-                              Don’t worry for the errors when npm install or npm build:dll it’s warning messages because the webpack dll cannot go through inside those dependencies directory, some dependencies work for backend side (such as fs and moment module ) so that will not built in dll libraries.
+                            <div id="collapseDeprecated" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                              <div class="card-body">
+                                <ul>
+                                  <li>
+                                      When installation and you got error like this :<br>
+                                      <pre class="  language-js"><code class="  language-js">
+Could not resolve dependency<span class="token punctuation">:</span>
+peer example<span class="token operator">-</span>peer<span class="token operator">-</span><span class="token keyword">package</span>@<span class="token string">"^3.2.0"</span> <span class="token keyword">from</span> example<span class="token operator">-</span><span class="token keyword">package</span>@<span class="token number">3.0</span><span class="token number">.0</span>
+example<span class="token operator">-</span><span class="token keyword">package</span>@<span class="token number">3.0</span><span class="token number">.0</span> <span class="token keyword">from</span> the root project
+        </code></pre>
+                                    </li>
+                                    <li>
+                                      Try to remove the error package (i.e example-package@3.0.0) from <code>package.json</code> Then install again. 
+                                      <pre class="  language-js"><code class="  language-js">npm install</code></pre>
+                                      After installation done, try to install the problematic package manually with <code>--legacy-peer-deps</code> options. 
+                                      <pre class="  language-js"><code class="  language-js">npm install example<span class="token operator">-</span><span class="token keyword">package</span>@<span class="token number">3.0</span><span class="token number">.0</span> <span class="token operator">--</span>legacy<span class="token operator">-</span>peer<span class="token operator">-</span>deps</code></pre>
+                                      Example for multiple packages
+                                      <pre class="  language-js"><code class="  language-js">npm install example<span class="token operator">-</span><span class="token keyword">package</span>@<span class="token number">3.0</span><span class="token number">.0</span> other<span class="token operator">-</span><span class="token keyword">package</span>@<span class="token number">1.0</span><span class="token number">.0</span> <span class="token operator">--</span>legacy<span class="token operator">-</span>peer<span class="token operator">-</span>deps</code></pre>
+                                    </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" id="headingOne">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Installation Problem: Dependencies Warning
+                                </button>
+                              </h5>
+                            </div>
 
-You can continue to start the project by run npm start or npm run start:prod (if production) and should work properly.
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                              <div class="card-body">
+                                <ul>
+                                  <li>
+                                      <em>if got warning like this :</em><br>
+                                      <pre class=" language-js"><code class=" language-js">npm <span class="token constant">WARN</span> redux<span class="token operator">-</span>immutablejs@<span class="token number">0.0</span><span class="token number">.8</span> requires a peer <span class="token keyword">of</span> immutable@<span class="token operator">^</span><span class="token number">3.7</span><span class="token number">.5</span> but none is installed<span class="token punctuation">.</span> You must install peer dependencies yourself<span class="token punctuation">.</span>
+        npm <span class="token constant">WARN</span> react<span class="token operator">-</span>draft<span class="token operator">-</span>wysiwyg@<span class="token number">1.12</span><span class="token number">.13</span> requires a peer <span class="token keyword">of</span> immutable@<span class="token number">3.</span>x<span class="token punctuation">.</span>x <span class="token operator">||</span> <span class="token number">4.</span>x<span class="token punctuation">.</span>x but none is installed<span class="token punctuation">.</span> You must install peer dependencies yourself<span class="token punctuation">.</span>
+        npm <span class="token constant">WARN</span> slick<span class="token operator">-</span>carousel@<span class="token number">1.8</span><span class="token number">.1</span> requires a peer <span class="token keyword">of</span> jquery@<span class="token operator">&gt;=</span><span class="token number">1.8</span><span class="token number">.0</span> but none is installed<span class="token punctuation">.</span> You must install peer dependencies yourself<span class="token punctuation">.</span>
+        npm <span class="token constant">WARN</span> draftjs<span class="token operator">-</span>utils@<span class="token number">0.9</span><span class="token number">.4</span> requires a peer <span class="token keyword">of</span> immutable@<span class="token number">3.</span>x<span class="token punctuation">.</span>x <span class="token operator">||</span> <span class="token number">4.</span>x<span class="token punctuation">.</span>x but none is installed<span class="token punctuation">.</span> You must install peer dependencies yourself<span class="token punctuation">.</span>
+        npm <span class="token constant">WARN</span> html<span class="token operator">-</span>to<span class="token operator">-</span>draftjs@<span class="token number">1.4</span><span class="token number">.0</span> requires a peer <span class="token keyword">of</span> immutable@<span class="token number">3.</span>x<span class="token punctuation">.</span>x <span class="token operator">||</span> <span class="token number">4.</span>x<span class="token punctuation">.</span>x but none is installed<span class="token punctuation">.</span> You must install peer dependencies yourself<span class="token punctuation">.</span>
+        </code></pre>
+                                      <strong>Don't worry the app will run as well</strong>
+                                      <p>For warning some of dependencies need another dependencies too, maybe once you install them, there’s some changes from the 3rd party vendor so probably it will make a warning to another dependencies.</p>
+                                    </li>
+                                    <li>
+                                      <em>if got an error with a dependencies installation</em>. Try to remove the all module
+                                      <code>node_modules/</code>. Then install again with <code>npm install</code>. 
+                                      If error still happen, please try to remove the problematic package <code>node_modules/</code> foler. 
+                                      After that try to install the problematic package manually. <code>npm install ‹package_name› --save-dev</code>
+                                    </li>
+                                    <li>
+                                      if still got an error. Try to update the problematic package instead.
+                                    </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" id="headingNode18">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseNode18" aria-expanded="true" aria-controls="collapseOne">
+                                  Running Problem: Node Version &gt;= 18
+                                </button>
+                              </h5>
+                            </div>
 
-If the program cannot running properly, please try to remove all module in node_modules/. Then install again with npm install.
-<br /><br />
-                              <em>FYI: The webpack dll itself use for optimizing building script. Here’s article about webpack dll https://medium.com/@emilycoco/how-to-use-the-dll-plugin-to-speed-up-your-webpack-build-dbf330d3b13c.</em>
-                            </li>
-                            <li>
-                              <em>if got an error with a dependencies installation</em>. Try to remove the problematic package in
-                              <code>package.json</code>. Then install again with <code>npm install</code>. After finish try to
-                              install the problematic package manually.
-                            </li>
-                            <li>
-                              if still got an error. Try to update the problematic package instead.
-                            </li>
-                        </ul>
-                        <br />
-                        <br />
-                        <h4>Development Problem</h4>
-                        <p>
-                          Every code changes, the app will updated directly without reloading the pages. 
-                          when errors happen or warning will show in browser and console browser.
-                        </p>
-                        <br />
+                            <div id="collapseNode18" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" style="">
+                              <div class="card-body">
+                                <ul>
+                                  <li>
+                                      When you run npm run dev, build, etc, then you got error like this:
+                                      <pre class="  language-js"><code class="  language-js">
+Error<span class="token punctuation">:</span> error<span class="token punctuation">:</span><span class="token number">0308010</span>C<span class="token punctuation">:</span>digital envelope routines<span class="token punctuation">:</span><span class="token punctuation">:</span>unsupported
+    at <span class="token keyword">new</span> <span class="token class-name">Hash</span> <span class="token punctuation">(</span>node<span class="token punctuation">:</span>internal<span class="token operator">/</span>crypto<span class="token operator">/</span>hash<span class="token punctuation">:</span><span class="token number">67</span><span class="token punctuation">:</span><span class="token number">19</span><span class="token punctuation">)</span>
+    at Object<span class="token punctuation">.</span><span class="token function">createHash</span> <span class="token punctuation">(</span>node<span class="token punctuation">:</span>crypto<span class="token punctuation">:</span><span class="token number">130</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">)</span>
+        </code></pre>
+                                    </li>
+                                    <li>
+                                      Open terminal and paste these as described:
+                                      <ol>
+                                        <li>
+                                          Linux and macOS (Windows Git Bash)
+                                          <pre class="  language-js"><code class="  language-js"><span class="token keyword">export</span> <span class="token constant">NODE_OPTIONS</span><span class="token operator">=</span><span class="token operator">--</span>openssl<span class="token operator">-</span>legacy<span class="token operator">-</span>provider</code></pre>
+                                        </li>
+                                        <li>
+                                          Windows command prompt
+                                          <pre class="  language-js"><code class="  language-js"><span class="token keyword">set</span> <span class="token constant">NODE_OPTIONS</span><span class="token operator">=</span><span class="token operator">--</span>openssl<span class="token operator">-</span>legacy<span class="token operator">-</span>provider</code></pre>
+                                        </li>
+                                        <li>
+                                          Windows PowerShell
+                                          <pre class="  language-js"><code class="  language-js">$env<span class="token punctuation">:</span><span class="token constant">NODE_OPTIONS</span> <span class="token operator">=</span> <span class="token string">"--openssl-legacy-provider"</span></code></pre>
+                                        </li>
+                                      </ol>
+                                    </li>
+                                    <li>
+                                      Then try <code>npm run dev</code> or <code>npm run build</code> again
+                                    </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" id="headingTwo">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  Installation Problem: Stuck on Installation
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                              <div class="card-body">
+                                <ul>
+                                  <li>
+                                      Here's a case error when installation being stuck on node-pre-gyp<br>
+                                      <pre class=" language-js"><code class=" language-js">node<span class="token operator">-</span>pre<span class="token operator">-</span>gyp <span class="token constant">WARN</span> Using request <span class="token keyword">for</span> node<span class="token operator">-</span>pre<span class="token operator">-</span>gyp https download 
+        </code></pre>
+                                    </li>
+                                    <li>
+                                      Please stop the installation process by press <strong>CTRL+C</strong>
+                                    </li>
+                                    <li>
+                                      Then run <code>npm install</code> again.
+                                    </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" id="headingThree">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                  Start Project Problem: Error SCSS
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                              <div class="card-body">
+                                <ul>
+                                  <li>
+                                      If you get error messages when start project <code>npm start</code> like this<br>
+                                      <pre class=" language-js"><code class=" language-js"><span class="token constant">ERROR</span> <span class="token keyword">in</span> <span class="token punctuation">.</span><span class="token operator">/</span>app<span class="token operator">/</span>styles<span class="token operator">/</span>layout<span class="token operator">/</span>base<span class="token punctuation">.</span><span class="token function">scss</span> <span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token operator">/</span>node_modules<span class="token operator">/</span>css<span class="token operator">-</span>loader<span class="token operator">/</span>dist<span class="token operator">/</span>cjs<span class="token punctuation">.</span>js<span class="token operator">?</span><span class="token operator">?</span>ref<span class="token operator">--</span><span class="token number">8</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">!</span><span class="token punctuation">.</span><span class="token operator">/</span>node_modules<span class="token operator">/</span>postcss<span class="token operator">-</span>loader<span class="token operator">/</span>src<span class="token operator">?</span><span class="token operator">?</span>ref<span class="token operator">--</span><span class="token number">8</span><span class="token operator">-</span><span class="token number">2</span><span class="token operator">!</span><span class="token punctuation">.</span><span class="token operator">/</span>node_modules<span class="token operator">/</span>sass<span class="token operator">-</span>loader<span class="token operator">/</span>lib<span class="token operator">/</span>loader<span class="token punctuation">.</span>js<span class="token operator">?</span><span class="token operator">?</span>ref<span class="token operator">--</span><span class="token number">8</span><span class="token operator">-</span><span class="token number">3</span><span class="token operator">!</span><span class="token punctuation">.</span><span class="token operator">/</span>app<span class="token operator">/</span>styles<span class="token operator">/</span>layout<span class="token operator">/</span>base<span class="token punctuation">.</span>scss<span class="token punctuation">)</span>
+Module build <span class="token function">failed</span> <span class="token punctuation">(</span><span class="token keyword">from</span> <span class="token punctuation">.</span><span class="token operator">/</span>node_modules<span class="token operator">/</span>sass<span class="token operator">-</span>loader<span class="token operator">/</span>lib<span class="token operator">/</span>loader<span class="token punctuation">.</span>js<span class="token punctuation">)</span><span class="token punctuation">:</span>
+Error<span class="token punctuation">:</span> <span class="token constant">ENOENT</span><span class="token punctuation">:</span> no such file or directory<span class="token punctuation">,</span> scandir <span class="token string">'/Users/retina/Documents/Enlite/enlite-prime_v1/starter-project/node_modules/node-sass/vendor'</span>
+        </code></pre>
+                                    </li>
+                                    <li>
+                                      It mean the node-sass not installed succesfully. May because connection problem, changed node environment during installation, or blocked node-sass repository
+                                    </li>
+                                    <li>
+                                      Please install <strong>node-sass</strong> manually by <code>npm install node-sass --save</code>
+                                    </li>
+                                    <li>
+                                      Build dll libraries <code>npm run build:dll</code>
+                                    </li>
+                                    <li>
+                                      Try to start project again <code>npm start</code>
+                                    </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" id="headingFour">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                  Development Problem: Error Firebase Auth and Database
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                              <div class="card-body">
+                                <ul>
+                                  <li>
+                                      If you get error messages when login/register or in Pre-build Apps<br>
+                                      <pre class=" language-js"><code class=" language-js"><span class="token punctuation">{</span><span class="token string">"error"</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token string">"code"</span><span class="token punctuation">:</span><span class="token number">400</span><span class="token punctuation">,</span><span class="token string">"message"</span><span class="token punctuation">:</span><span class="token string">"API key not valid. Please pass a valid API key."</span><span class="token punctuation">,</span><span class="token string">"errors"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span><span class="token string">"API key not valid. Please pass a valid API key."</span><span class="token punctuation">,</span><span class="token string">"domain"</span><span class="token punctuation">:</span><span class="token string">"global"</span><span class="token punctuation">,</span><span class="token string">"reason"</span><span class="token punctuation">:</span><span class="token string">"badRequest"</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">"status"</span><span class="token punctuation">:</span><span class="token string">"INVALID_ARGUMENT"</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+        </code></pre>
+                                    </li>
+                                    <li>
+                                      <pre class=" language-js"><code class=" language-js"><span class="token punctuation">{</span><span class="token string">"error"</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token string">"code"</span><span class="token punctuation">:</span><span class="token number">400</span><span class="token punctuation">,</span><span class="token string">"message"</span><span class="token punctuation">:</span><span class="token string">"API key not valid. Please pass a valid API key."</span><span class="token punctuation">,</span><span class="token string">"errors"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span><span class="token string">"API key not valid. Please pass a valid API key."</span><span class="token punctuation">,</span><span class="token string">"domain"</span><span class="token punctuation">:</span><span class="token string">"global"</span><span class="token punctuation">,</span><span class="token string">"reason"</span><span class="token punctuation">:</span><span class="token string">"badRequest"</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">"status"</span><span class="token punctuation">:</span><span class="token string">"INVALID_ARGUMENT"</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+                                      @firebase<span class="token operator">/</span>database<span class="token punctuation">:</span> <span class="token constant">FIREBASE</span> <span class="token constant">WARNING</span><span class="token punctuation">:</span> Firebase error<span class="token punctuation">.</span> Please ensure that you spelled the name <span class="token keyword">of</span> your Firebase correctly
+        </code></pre>
+                                    </li>
+                                    <li>
+                                      Please check the firebase configuration in <code>app/firebase/config.js</code>. By default we use fake configuration script.
+                                    </li>
+                                    <li>
+                                      If you haven't make you're configuration please follow the <a href="code_flow/firebase.html#get_api">firebase setup instruction</a>
+                                    </li>
+                                    <li>
+                                      Then replace you're config script to <code>app/firebase/config.js</code>
+                                    </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <br>
                     </div>
                 </section>
                 <!-- END -->
@@ -1574,6 +1727,42 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                 <section class="row" id="log">
                     <div class="col-lg-10">
                       <h1>Change Log</h1>
+                      <table class="table table-striped log">
+                        <thead>
+                          <tr>
+                            <th>
+                                <strong>Version 2.4.2 – 7 Nov, 2022</strong>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              Fixed: Deprecated installation react-animated-slider 
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              File changes: package.json
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Fixed: Node v18 run and build error
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              File changes: package.json
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Docs: Update troubleshooting cases
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                       <table class="table table-striped log">
                         <thead>
                           <tr>
