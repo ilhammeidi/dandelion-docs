@@ -128,14 +128,14 @@
                         <h1 class="title">Thank you for Purchasing </h1>
                         <br /><br />
                         <h3>Dandelion Pro - React Admin Dashboard Template</h3>
-                        <h4>Version 2.4.2</h4>
+                        <h4>Version 2.5.0</h4>
                         <hr />
                         <ul>
                             <li>
                                 Created : 18 Nov 2018
                             </li>
                             <li>
-                                Latest Update : 7 Nov 2022
+                                Latest Update : 27 Jan 2023
                             </li>
                         </ul>
                     </div>
@@ -402,38 +402,31 @@
                         <p>This is a feature from React Boilerplate which has focus of 'offline first'.
                               So will make easier to build Progressive Web Aplication. The next frontier in performant web apps: availability without a network connection from the instant your users load the app.</p>
 						            <ul>
-                            <li>Open <code>app/app.js</code></li>
                             <li>
+                              Open <code>app/app.js</code>
                               At very bottom just enable(uncomment) this code
-                              <pre><code class="language-js">if (process.env.NODE_ENV === 'production') {
-  require('offline-plugin/runtime').install(); // eslint-disable-line global-require
+                              <pre><code class="language-js">if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      console.log('SW registered: ', registration);
+    }).catch(registrationError => {
+      console.log('SW registration failed: ', registrationError);
+    });
+  });
+}
 }</code></pre>
                             </li>
-                            <li>Next, open <code>/internals/webpack/webpack.prod.babel.js</code></li>
-                            <li>
-                              Then enable(uncomment) the offline-plugin import
-                              <pre><code class="language-js">const OfflinePlugin = require('offline-plugin');</code></pre>
-                              and enable(uncomment) OfflinePlugin webpack config around line:94
-                              <pre><code class="language-js">new OfflinePlugin({
-  relativePaths: false,
-  publicPath: '/',
-  appShell: '/',
-
-  // No need to cache .htaccess. See http://mxs.is/googmp,
-  // this is applied before any match in `caches` section
-  excludes: ['.htaccess'],
-
-  caches: {
-    main: [':rest:'],
-
-    // All chunks marked as `additional`, loaded after main section
-    // and do not prevent SW to install. Change to `optional` if
-    // do not want them to be preloaded at all (cached only when first loaded)
-    additional: ['*.chunk.js'],
-  },
-
-  // Removes warning for about `additional` section usage
-  safeToUseOptionalCaches: true,
+                            <li>Next, open <code>/internals/webpack/webpack.prod.babel.js</code>
+                              Then enable(uncomment) the webpack plugin import
+                              <pre><code class="language-js">const WorkboxPlugin = require('workbox-webpack-plugin');</code></pre>
+                              and enable(uncomment) WorkboxPlugin webpack config around line:87
+                              <pre><code class="language-js">new WorkboxPlugin.GenerateSW({
+  // these options encourage the ServiceWorkers to get in there fast
+  // and not allow any straggling "old" SWs to hang around
+  clientsClaim: true,
+  navigateFallback: '/index.html',
+  skipWaiting: true,
+  maximumFileSizeToCacheInBytes: 5242880
 }),</code></pre>
                             </li>
                             <li>Go to console, then do the same as deployment method <a href="#run">above</a>. Build the site <pre><code class="language-js">npm run build</code></pre></li>
@@ -441,10 +434,19 @@
                             <li>Then navigate to <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></li>
                             <li>
                               <div class="alert alert-warning">
-                                  WARNING: Do not cache build/.htaccess and build/sw.js in your server, required for offline-first updates.
+                                  WARNING: Do not cache build/.htaccess and build/service-worker.js in your server, required for offline-first updates.
                               </div>
                             </li>
-                            <li><strong>Note:</strong> 
+                            <li>
+                              <strong>Note 1:</strong>
+                              With this feature all scripts will be stored in Local Storage, so can be accessed even offline.
+                              And if any updates, The service-worker.js will handle it when browser reload or re-open the site.
+                              <strong>Once update received, the site won't changes immediately, because the status is pending/waiting,
+                              Please run the second reload to set the update as active.</strong>
+                              <br />
+                              <img src="images/sw.png" width="400" alt="sw" />
+                            </li>
+                            <li><strong>Note 2:</strong> 
                               After build finish then when you access it on local, all of the assets will be stored in local storage.
                               So when You make a change the result will not update, because browser will take the code from cache.
                               <br />
@@ -1727,6 +1729,44 @@ import BatteryStd from '@material-ui/icons/BatteryStd';
                 <section class="row" id="log">
                     <div class="col-lg-10">
                       <h1>Change Log</h1>
+                      <table class="table table-striped log">
+                        <thead>
+                          <tr>
+                            <th>
+                                <strong>Version 2.5.0 – 27 Jan, 2023</strong>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              Feature: Add Service Worker
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              File changes: <br />
+                              - package.json <br />
+                              - app/app.js <br />
+                              - internals/webpack/webpack.prod.babel.js <br />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Chore: Upgrade to Material UI 5
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              File changes: <br />
+                              - package.json <br />
+                              - app/components/*.js <br />
+                              - app/containers/*.js <br />
+                              - app/styles/theme/applicationTheme.js <br />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                       <table class="table table-striped log">
                         <thead>
                           <tr>
